@@ -32,13 +32,11 @@ def register():
         return redirect(url_for("main.home"))
     form = RegistrationForm()
     if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode(
-            "utf-8"
-        )
+        hashed = bcrypt.generate_password_hash(form.password.data).decode("utf-8")
         user = User(
             username=form.username.data,
             email=form.email.data,
-            password=hashed_password,
+            password=hashed,
         )
         db.session.add(user)
         db.session.commit()

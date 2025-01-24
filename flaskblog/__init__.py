@@ -45,7 +45,7 @@ def create_app(config_class=Config) -> Flask:
     app.register_blueprint(main)
     app.register_blueprint(errors)
 
-    with app.app_context() as _:
+    with app.app_context():
         # create db and tables if not exists
         db.create_all()
 
