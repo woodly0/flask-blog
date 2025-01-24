@@ -18,7 +18,7 @@ Open a terminal within the project directory and execute the following command:
 ```
 pipenv install
 ```
-This will create a virtual environment with the necessary dependencies.
+This will create a virtual environment with the necessary dependencies listed in the [Pipfile](Pipfile)
 
 ## Run
 
